@@ -1,0 +1,31 @@
+#/home/anton/Qt5.9.1/5.9.1/gcc_64/bin/qmake qmakefile
+
+
+TEMPLATE = app
+TARGET = md
+
+QT = core gui
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
+SOURCES += src/constants.cpp
+
+SOURCES += src/main.cpp
+SOURCES += src/bond.cpp
+SOURCES += src/particle.cpp
+SOURCES += src/particles_system.cpp
+SOURCES += src/simulation_box.cpp
+SOURCES += src/simulation_box_widget.cpp
+SOURCES += src/potentials/potential_harmonic.cpp
+
+
+HEADERS += src/bond.hpp
+HEADERS += src/particle.hpp
+HEADERS += src/particles_system.hpp
+HEADERS += src/simulation_box.hpp
+HEADERS += src/simulation_box_widget.hpp
+HEADERS += src/potentials/potential.hpp
+HEADERS += src/potentials/potential_harmonic.hpp
+
+QMAKE_CXXFLAGS *= -std=gnu++11
+
