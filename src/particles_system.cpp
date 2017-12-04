@@ -9,6 +9,10 @@ ParticlesSystem::ParticlesSystem(
     this->particle_ptrs = particle_ptrs;
     this->bond_ptrs = bond_ptrs;
     this->parameterization_ptr = parameterization_ptr;
+    thisTimer_ptr = new QTimer(this);
+    thisTimer_ptr->setInterval(0);
+    QObject::connect(thisTimer_ptr, SIGNAL(timeout()), this, SLOT(update()));
+    thisTimer_ptr->start();
 }
 
 std::vector<std::shared_ptr<Particle> > ParticlesSystem::getParticle_ptrs()

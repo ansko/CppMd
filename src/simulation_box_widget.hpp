@@ -2,10 +2,9 @@
 
 #include <memory>
 
-#include <QApplication>
-#include <QWidget>
-#include <QTimer>
 #include <QPainter>
+#include <QTimer>
+#include <QWidget>
 
 #include "particle.hpp"
 #include "simulation_box.hpp"
@@ -29,6 +28,5 @@ protected:
     void paintEvent(QPaintEvent *event);
 private:
     QTimer* thisTimer_ptr;
-    QTimer* systemTimer_ptr;
     std::shared_ptr<SimulationBox> simulationBox_ptr;
 };

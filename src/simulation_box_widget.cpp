@@ -9,13 +9,6 @@ SimulationBoxWidget::SimulationBoxWidget(
     thisTimer_ptr->setInterval(UPDATE_THIS);
     QObject::connect(thisTimer_ptr, SIGNAL(timeout()), this, SLOT(update()));
     thisTimer_ptr->start();
-    systemTimer_ptr = new QTimer(this);
-    systemTimer_ptr->setInterval(UPDATE_SYSTEM);
-    QObject::connect(systemTimer_ptr,
-                     SIGNAL(timeout()),
-                     this,
-                     SLOT(updateParticlesSystem()));
-    systemTimer_ptr->start();
 }
 
 

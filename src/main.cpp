@@ -9,9 +9,9 @@
 #include <vector>
 
 #include <QApplication>
-#include <QWidget>
-#include <QTimer>
 #include <QPainter>
+#include <QTimer>
+#include <QWidget>
 
 #include "constants.cpp"
 
@@ -20,6 +20,7 @@
 #include "particles_system.hpp"
 #include "simulation_box.hpp"
 #include "simulation_box_widget.hpp"
+
 #include "potentials/potential_harmonic.hpp"
 #include "potentials/potential_vdw_6_12.hpp"
 
