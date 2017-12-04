@@ -5,7 +5,8 @@
 extern float DEFAULT_MASS;
 extern float DEFAULT_CHARGE;
 
-class Particle {
+class Particle
+{
 public:
     Particle();
     Particle(float m,

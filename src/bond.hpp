@@ -8,7 +8,8 @@
 #include "particle.hpp"
 
 
-class Bond {
+class Bond
+{
 public:
     Bond(std::shared_ptr<Particle> particle1_ptr,
          std::shared_ptr<Particle> particle2_ptr, 

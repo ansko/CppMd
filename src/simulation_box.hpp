@@ -6,7 +6,8 @@
 #include "particles_system.hpp"
 
 
-class SimulationBox {
+class SimulationBox
+{
 public:
     SimulationBox(std::shared_ptr<ParticlesSystem> particlesSystem_ptr);
     SimulationBox(std::shared_ptr<ParticlesSystem> particlesSystem_ptr,

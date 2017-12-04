@@ -17,7 +17,7 @@ SOURCES += src/particles_system.cpp
 SOURCES += src/simulation_box.cpp
 SOURCES += src/simulation_box_widget.cpp
 SOURCES += src/potentials/potential_harmonic.cpp
-
+SOURCES += src/potentials/potential_vdw_6_12.cpp
 
 HEADERS += src/bond.hpp
 HEADERS += src/particle.hpp
@@ -26,6 +26,7 @@ HEADERS += src/simulation_box.hpp
 HEADERS += src/simulation_box_widget.hpp
 HEADERS += src/potentials/potential.hpp
 HEADERS += src/potentials/potential_harmonic.hpp
+HEADERS += src/potentials/potential_vdw_6_12.hpp
 
 QMAKE_CXXFLAGS *= -std=gnu++11
 

@@ -10,10 +10,10 @@
 #include "potential.hpp"
 
 
-extern float K_HAR;
+extern float VDW_PRE_FACTOR;
+extern float VDW_RADIUS;
 
-
-class PotentialHarmonic : public Potential
+class PotentialVDW_6_12 : public Potential
 {
 public:
     float E(std::shared_ptr<Bond> bond_ptr);

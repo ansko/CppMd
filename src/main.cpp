@@ -1,4 +1,4 @@
-// ./md -style Fusion
+// ./md -style Fusion >log
 
 
 #include <cmath>
@@ -21,6 +21,7 @@
 #include "simulation_box.hpp"
 #include "simulation_box_widget.hpp"
 #include "potentials/potential_harmonic.hpp"
+#include "potentials/potential_vdw_6_12.hpp"
 
 int NUM = 5;
 float EPSILON = 0.000001;
@@ -48,26 +49,22 @@ int main(int argc, char **argv)
             float dy = particle->y() - otherParticle->y();
             float dz = particle->z() - otherParticle->z();
             float dl = pow(pow(dx, 2) + pow(dy, 2) + pow(dz, 2), 0.5);
-            if (dl > DEFAULT_LENGTH_SCALE * 1.9)
+            /*if (dl > DEFAULT_LENGTH_SCALE * 1.9)
                 continue;
             if (dl < EPSILON)
-                continue;
+                continue;*/
             Bond bond(particle, otherParticle, dl);
             std::shared_ptr<Bond> bond_ptr = std::make_shared<Bond>(bond);
             bond_ptrs.push_back(bond_ptr);
         }
     particle_ptrs[0]->move(DEFAULT_LENGTH_SCALE / 5, DEFAULT_LENGTH_SCALE / 5, 0);
 
-    PotentialHarmonic pot;
-    std::shared_ptr<PotentialHarmonic> pot_ptr = 
-        std::make_shared<PotentialHarmonic>(pot);
+    std::shared_ptr<Potential> pot_ptr = std::make_shared<PotentialHarmonic>();
 
-    ParticlesSystem pss(particle_ptrs, bond_ptrs, pot_ptr);
     std::shared_ptr<ParticlesSystem> pss_ptr =
-        std::make_shared<ParticlesSystem>(pss);
+        std::make_shared<ParticlesSystem>(particle_ptrs, bond_ptrs, pot_ptr);
 
-    SimulationBox sb(pss_ptr);
-    std::shared_ptr<SimulationBox> sb_ptr = std::make_shared<SimulationBox>(sb);
+    std::shared_ptr<SimulationBox> sb_ptr = std::make_shared<SimulationBox>(pss_ptr);
 
     SimulationBoxWidget w(sb_ptr);
 

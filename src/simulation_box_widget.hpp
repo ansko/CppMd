@@ -13,9 +13,12 @@
 extern int OFFSET_X;
 extern int OFFSET_Y;
 extern float PAINTING_RADIUS;
+extern float UPDATE_THIS;
+extern float UPDATE_SYSTEM;
 
 
-class SimulationBoxWidget : public QWidget{
+class SimulationBoxWidget : public QWidget
+{
     Q_OBJECT
 public:
     SimulationBoxWidget(std::shared_ptr<SimulationBox> simulationBox_ptr);

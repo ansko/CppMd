@@ -1,7 +1,8 @@
 #include "particle.hpp"
 
 
-Particle::Particle() {
+Particle::Particle()
+{
     _m = DEFAULT_MASS;
     _q = DEFAULT_CHARGE;
     _x = 0;
@@ -15,7 +16,8 @@ Particle::Particle() {
 Particle::Particle(float m,
                    float q,
                    float x, float y, float z,
-                   float vx, float vy, float vz) {
+                   float vx, float vy, float vz)
+{
     _m = m;
     _q = q;
     _x = x;
@@ -26,49 +28,60 @@ Particle::Particle(float m,
     _vz = vz;
 }
 
-float Particle::m() const {
+float Particle::m() const
+{
     return _m;
 };
 
-float Particle::q() const {
+float Particle::q() const
+{
     return _q;
 };
 
-float Particle::x() const {
+float Particle::x() const
+{
     return _x;
 };
 
-float Particle::y() const {
+float Particle::y() const
+{
     return _y;
 };
 
-float Particle::z() const {
+float Particle::z() const
+{
     return _z;
 };
 
-float Particle::vx() const {
+float Particle::vx() const
+{
     return _vx;
 };
 
-float Particle::vy() const {
+float Particle::vy() const
+{
     return _vy;
 };
 
-float Particle::vz() const {
+float Particle::vz() const
+{
     return _vz;
 };
 
-float Particle::E_kin() {
+float Particle::E_kin()
+{
     return _m * pow(pow(_vx, 2) + pow(_vy, 2) + pow(_vz, 2), 0.5) / 2;
 };
 
-void Particle::move(float dx, float dy, float dz) {
+void Particle::move(float dx, float dy, float dz)
+{
     _x += dx;
     _y += dy;
     _z += dz;
 };
 
-void Particle::changeVelocities(float dvx, float dvy, float dvz) {
+void Particle::changeVelocities(float dvx, float dvy, float dvz)
+{
     _vx += dvx;
     _vy += dvy;
     _vz += dvz;
