@@ -23,8 +23,10 @@
 #include "potentials/potential_harmonic.hpp"
 #include "potentials/potential_vdw_6_12.hpp"
 
+
 int NUM = 5;
 float EPSILON = 0.000001;
+
 
 int main(int argc, char **argv)
 {
@@ -57,9 +59,11 @@ int main(int argc, char **argv)
             std::shared_ptr<Bond> bond_ptr = std::make_shared<Bond>(bond);
             bond_ptrs.push_back(bond_ptr);
         }
-    particle_ptrs[0]->move(DEFAULT_LENGTH_SCALE / 5, DEFAULT_LENGTH_SCALE / 5, 0);
+    particle_ptrs[0]->move(-DEFAULT_LENGTH_SCALE / 5,
+                           -DEFAULT_LENGTH_SCALE / 5,
+                           0);
 
-    std::shared_ptr<Potential> pot_ptr = std::make_shared<PotentialHarmonic>();
+    std::shared_ptr<Potential> pot_ptr = std::make_shared<PotentialVDW_6_12>();
 
     std::shared_ptr<ParticlesSystem> pss_ptr =
         std::make_shared<ParticlesSystem>(particle_ptrs, bond_ptrs, pot_ptr);
